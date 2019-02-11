@@ -1,0 +1,437 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+  no-trivial-tests: true
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    java-assume-inputs-non-null: true
+    max-nondet-array-length: 10
+    string-non-empty: true
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+units:
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/EvD1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/EvD1D.java
+    # Child of EvD1D.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/ComplexNumber.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/ComplexNumber.java
+    # Child of EvD1D.class
+    - dir: target/classes
+      file: org/ojalgo/type/context/NumberContext.class
+      sourceDir: src
+      sourceFile: org/ojalgo/type/context/NumberContext.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/EvD2D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/EvD2D.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/Presolvers.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/Presolvers.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/operation/HouseholderHermitian.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/operation/HouseholderHermitian.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/array/blas/AXPY.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/blas/AXPY.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/array/blas/COPY.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/blas/COPY.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/concurrent/DivideAndConquer.class
+      sourceDir: src
+      sourceFile: org/ojalgo/concurrent/DivideAndConquer.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/constant/PrimitiveMath.class
+      sourceDir: src
+      sourceFile: org/ojalgo/constant/PrimitiveMath.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/function/PrimitiveFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/PrimitiveFunction.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/transformation/Householder.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/transformation/Householder.java
+    # Child of HouseholderHermitian.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/Scalar.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/Scalar.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/PrimitiveAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/PrimitiveAggregator.java
+    # Child of PrimitiveAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/ProgrammingError.class
+      sourceDir: src
+      sourceFile: org/ojalgo/ProgrammingError.java
+    # Child of PrimitiveAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/PrimitiveScalar.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/PrimitiveScalar.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/QuaternionAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/QuaternionAggregator.java
+    # Child of QuaternionAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/function/QuaternionFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/QuaternionFunction.java
+    # Child of QuaternionAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/Quaternion.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/Quaternion.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/ComplexAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/ComplexAggregator.java
+    # Child of ComplexAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/function/ComplexFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/ComplexFunction.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/RationalAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/RationalAggregator.java
+    # Child of RationalAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/function/RationalFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/RationalFunction.java
+    # Child of RationalAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/RationalNumber.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/RationalNumber.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/BigAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/BigAggregator.java
+    # Child of BigAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/function/BigFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/BigFunction.java
+    # Child of BigAggregator.class
+    - dir: target/classes
+      file: org/ojalgo/scalar/BigScalar.class
+      sourceDir: src
+      sourceFile: org/ojalgo/scalar/BigScalar.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/task/SolverTask.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/task/SolverTask.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/RecoverableCondition.class
+      sourceDir: src
+      sourceFile: org/ojalgo/RecoverableCondition.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/MatrixUtils.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/MatrixUtils.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/Cholesky.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/Cholesky.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/LU.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/LU.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/QR.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/QR.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/SingularValue.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/SingularValue.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/MatrixStore.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/MatrixStore.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/PhysicalStore.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/PhysicalStore.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/structure/Access2D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/Access2D.java
+    # Child of SolverTask.class
+    - dir: target/classes
+      file: org/ojalgo/structure/Structure2D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/Structure2D.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/type/TimeIndex.class
+      sourceDir: src
+      sourceFile: org/ojalgo/type/TimeIndex.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/type/CalendarDateUnit.class
+      sourceDir: src
+      sourceFile: org/ojalgo/type/CalendarDateUnit.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/RawSingularValue.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/RawSingularValue.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/array/Array1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/Array1D.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/array/blas/DOT.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/blas/DOT.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/function/ExchangeColumns.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/function/ExchangeColumns.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/function/NegateColumn.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/function/NegateColumn.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/function/RotateRight.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/function/RotateRight.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/PrimitiveDenseStore.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/PrimitiveDenseStore.java
+    # Child of RawSingularValue.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/RawStore.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/RawStore.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/convex/ActiveSetSolver.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/convex/ActiveSetSolver.java
+    # Child of ActiveSetSolver.class
+    - dir: target/classes
+      file: org/ojalgo/array/SparseArray.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/SparseArray.java
+    # Child of ActiveSetSolver.class
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/Aggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/Aggregator.java
+    # Child of ActiveSetSolver.class
+    - dir: target/classes
+      file: org/ojalgo/structure/Access1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/Access1D.java
+    # Child of ActiveSetSolver.class
+    - dir: target/classes
+      file: org/ojalgo/type/IndexSelector.class
+      sourceDir: src
+      sourceFile: org/ojalgo/type/IndexSelector.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/decomposition/BidiagonalDecomposition.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/decomposition/BidiagonalDecomposition.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/convex/IterativeASS.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/convex/IterativeASS.java
+    # Child of IterativeASS.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/ElementsSupplier.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/ElementsSupplier.java
+    # Child of IterativeASS.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/task/iterative/ConjugateGradientSolver.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/task/iterative/ConjugateGradientSolver.java
+    # Child of IterativeASS.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/task/iterative/Equation.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/task/iterative/Equation.java
+    # Child of IterativeASS.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/task/iterative/MutableSolver.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/task/iterative/MutableSolver.java
+    # Child of IterativeASS.class
+    - dir: target/classes
+      file: org/ojalgo/optimisation/Optimisation.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/Optimisation.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/linear/SimplexTableau.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/linear/SimplexTableau.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/OjAlgoUtils.class
+      sourceDir: src
+      sourceFile: org/ojalgo/OjAlgoUtils.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/array/BasicArray.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/BasicArray.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/array/DenseArray.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/DenseArray.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/array/Primitive64Array.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/Primitive64Array.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/array/Raw1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/Raw1D.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/function/NullaryFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/NullaryFunction.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/function/UnaryFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/UnaryFunction.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/structure/ElementView1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/ElementView1D.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/structure/Mutate1D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/Mutate1D.java
+    # Child of SimplexTableau.class
+    - dir: target/classes
+      file: org/ojalgo/structure/Mutate2D.class
+      sourceDir: src
+      sourceFile: org/ojalgo/structure/Mutate2D.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/SpecialOrderedSet.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/SpecialOrderedSet.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/optimisation/linear/SimplexSolver.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/linear/SimplexSolver.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/array/LongToNumberMap.class
+      sourceDir: src
+      sourceFile: org/ojalgo/array/LongToNumberMap.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/AggregatorFunction.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/AggregatorFunction.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/function/aggregator/PrimitiveAggregator.class
+      sourceDir: src
+      sourceFile: org/ojalgo/function/aggregator/PrimitiveAggregator.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/matrix/store/RowsSupplier.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/store/RowsSupplier.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/optimisation/Expression.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/Expression.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/optimisation/ExpressionsBasedModel.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/ExpressionsBasedModel.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/optimisation/Variable.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/Variable.java
+    # Child of SimplexSolver.class
+    - dir: target/classes
+      file: org/ojalgo/optimisation/convex/ConvexSolver.class
+      sourceDir: src
+      sourceFile: org/ojalgo/optimisation/convex/ConvexSolver.java
+  - target:
+    - dir: target/classes
+      file: org/ojalgo/matrix/task/DeterminantTask.class
+      sourceDir: src
+      sourceFile: org/ojalgo/matrix/task/DeterminantTask.java
